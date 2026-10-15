@@ -6,9 +6,8 @@
   # Publish directory containing index.html, style.css, and app.js
   publish = "web"
   
-  # Copies assets folder into web/assets so all videos, moodboard files, 
-  # and images are bundled and accessible on Netlify
-  command = "mkdir -p web/assets && cp -R assets/* web/assets/ 2>/dev/null || true"
+  # Since your assets are already inside web/assets, we don't need to copy them from root
+  command = ""
 
 # Production environment
 [context.production]
