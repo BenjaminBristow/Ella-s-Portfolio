@@ -1,3 +1,7 @@
+// ==============================================================================
+// ELLA ROSE BOWIS // ADVERTISING & MARKETING PORTFOLIO (APP.JS)
+// ==============================================================================
+
 const REGISTRY = {
   f1: {
     id: "f1",
@@ -181,7 +185,7 @@ function renderLesMisGrid() {
   const container = document.getElementById("lesmisGrid");
   if (!container) return;
   container.innerHTML = REGISTRY.lesMis.map(m => `
-    <div class="theatre-video-card" onclick="openCampaignModal('${m.id}')" title="Play ${m.title}">
+    <div class="theatre-video-card" onclick="window.openCampaignModal('${m.id}')" title="Play ${m.title}">
       <div class="tv-media">
         <div class="tv-overlay">
           <span class="tv-badge">${m.badge}</span>
@@ -201,7 +205,7 @@ function renderCompanionGrid() {
   const container = document.getElementById("companionGrid");
   if (!container) return;
   container.innerHTML = REGISTRY.companionTheatre.map(c => `
-    <div class="theatre-video-card" onclick="openCampaignModal('${c.id}')" title="Play ${c.title}">
+    <div class="theatre-video-card" onclick="window.openCampaignModal('${c.id}')" title="Play ${c.title}">
       <div class="tv-media">
         <div class="tv-overlay">
           <span class="tv-badge">${c.badge}</span>
@@ -221,7 +225,7 @@ function renderBrandingGrid() {
   const container = document.getElementById("brandingGrid");
   if (!container) return;
   container.innerHTML = REGISTRY.branding.map(b => `
-    <div class="brand-tile" onclick="openCampaignModal('${b.id}')">
+    <div class="brand-tile" onclick="window.openCampaignModal('${b.id}')">
       <div class="brand-tile-media">
         ${createSvgMockup(b.title, b.badge, b.id === 'strategy-plan' ? "📄" : "🎨", b.gradient)}
       </div>
@@ -254,6 +258,8 @@ function openCampaignModal(id) {
   const mDriveLink = document.getElementById("mDriveLink");
   const mScreen = document.getElementById("mScreen");
 
+  if (!modal) return;
+
   mTag.textContent = `${currentItem.badge} // ${currentItem.client || 'THEATRE / SOCIAL'}`;
   mTitle.textContent = currentItem.title;
   mDesc.textContent = currentItem.desc || currentItem.title;
@@ -267,7 +273,7 @@ function openCampaignModal(id) {
     mScreen.classList.remove("vertical-screen");
   }
 
-  switchPlayer("drive");
+  window.switchPlayer("drive");
   modal.classList.add("active");
   modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
@@ -278,6 +284,7 @@ function switchPlayer(source) {
   const mScreen = document.getElementById("mScreen");
   const btnStream = document.getElementById("btnStream");
   const btnLocal = document.getElementById("btnLocal");
+  if (!mScreen) return;
 
   if (source === "drive") {
     mScreen.innerHTML = `
@@ -309,6 +316,32 @@ function closeModal() {
   currentItem = null;
 }
 
+// Explicitly bind functions to window scope so HTML onclick attributes find them instantly
+window.openCampaignModal = openCampaignModal;
+window.switchPlayer = switchPlayer;
+window.closeModal = closeModal;
+
+window.submitPitch = function() {
+  const name = document.getElementById("cName").value;
+  const email = document.getElementById("cEmail").value;
+  const type = document.getElementById("cType").value;
+  const msg = document.getElementById("cMsg").value;
+  const status = document.getElementById("formStatus");
+
+  if (!status) return;
+
+  status.className = "form-status success";
+  status.innerHTML = `✓ Thank you, ${name}. Message regarding [${type}] logged. Direct confirmation sent to ${email}.`;
+
+  const mailto = `mailto:bbristow.uk@gmail.com?subject=${encodeURIComponent(`Opportunity: ${name} (${type})`)}&body=${encodeURIComponent(`From: ${name} (${email})\nType: ${type}\n\n${msg}`)}`;
+
+  setTimeout(() => {
+    if (confirm("Would you like to open your email client to send this message directly to Ella as well?")) {
+      window.location.href = mailto;
+    }
+  }, 600);
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   renderLesMisGrid();
   renderCompanionGrid();
@@ -334,27 +367,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-window.submitPitch = function() {
-  const name = document.getElementById("cName").value;
-  const email = document.getElementById("cEmail").value;
-  const type = document.getElementById("cType").value;
-  const msg = document.getElementById("cMsg").value;
-  const status = document.getElementById("formStatus");
-
-  if (!status) return;
-
-  status.className = "form-status success";
-  status.innerHTML = `✓ Thank you, ${name}. Message regarding [${type}] logged. Direct confirmation sent to ${email}.`;
-
-  const mailto = `mailto:bbristow.uk@gmail.com?subject=${encodeURIComponent(`Opportunity: ${name} (${type})`)}&body=${encodeURIComponent(`From: ${name} (${email})\nType: ${type}\n\n${msg}`)}`;
-
-  setTimeout(() => {
-    if (confirm("Would you like to open your email client to send this message directly to Ella as well?")) {
-      window.location.href = mailto;
-    }
-  }, 600);
-};
-
-window.openCampaignModal = openCampaignModal;
-window.switchPlayer = switchPlayer;
