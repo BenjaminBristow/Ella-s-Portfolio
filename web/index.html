@@ -3,44 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ella Rose Bowis | Advertising & Digital Marketing Portfolio</title>
-  <meta name="description" content="Portfolio of Ella Rose Bowis — Advertising and Digital Marketing Student at Lancaster University. Creative campaigns, spec ads, and social storytelling across sports, automotive, film, and culture.">
+  <title>Ella Rose Bowis | Advertising & Digital Marketing</title>
+  <meta name="description" content="Portfolio of Ella Rose Bowis — Advertising and Digital Marketing Student at Lancaster University. Spec campaigns, social storytelling, and brand creative.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="light">
+<body>
 
-  <!-- Floating Sticker Doodles (Inspired by moodboard) -->
-  <div class="doodle-star star-1" title="Click me!">★</div>
-  <div class="doodle-star star-2" title="Click me!">★</div>
-  <div class="doodle-star star-3" title="Click me!">★</div>
+  <!-- Ambient background glow -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-bottom"></div>
 
-  <!-- STICKY TOP NAV BAR -->
-  <header class="top-nav">
-    <div class="nav-container">
-      <div class="nav-brand">
-        <span class="brand-signature">Ella Rose Bowis</span>
-        <span class="brand-tagline">ADVERTISING & MARKETING • LANCASTER</span>
-      </div>
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-name">ELLA ROSE BOWIS</span>
+        <span class="logo-sub">ADVERTISING & MARKETING • LANCASTER</span>
+      </a>
 
-      <!-- Quick Navigation -->
-      <nav class="nav-links">
+      <nav class="nav-menu">
         <a href="#campaigns">Campaigns</a>
-        <a href="#reels">Social & TikTok</a>
-        <a href="#about">About Me</a>
-        <a href="#pillars">6 Worlds</a>
-        <a href="#contact" class="nav-pitch-btn">Get In Touch</a>
+        <a href="#social">Social & TikTok</a>
+        <a href="#about">About</a>
+        <a href="#worlds">6 Worlds</a>
+        <a href="#contact" class="nav-cta">Get in Touch</a>
       </nav>
 
-      <!-- Theme Mode Toggle -->
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-        <span class="theme-icon" id="themeIcon">🌙</span>
-      </button>
-
-      <!-- Mobile Hamburger Toggle -->
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
         <span></span>
         <span></span>
         <span></span>
@@ -50,119 +42,100 @@
 
   <!-- Mobile Drawer -->
   <div class="mobile-drawer" id="mobileDrawer">
-    <a href="#campaigns" class="mobile-link">Selected Campaigns</a>
-    <a href="#reels" class="mobile-link">Short-Form & Social</a>
-    <a href="#about" class="mobile-link">About Ella</a>
-    <a href="#pillars" class="mobile-link">The 6 Worlds</a>
-    <a href="#contact" class="mobile-link mobile-cta">Start a Conversation</a>
+    <a href="#campaigns" class="drawer-link">Campaigns & Spec Ads</a>
+    <a href="#social" class="drawer-link">Social & TikTok (9:16)</a>
+    <a href="#about" class="drawer-link">About Ella</a>
+    <a href="#worlds" class="drawer-link">The 6 Worlds</a>
+    <a href="#contact" class="drawer-link drawer-cta">Get in Touch</a>
   </div>
 
   <main>
-    <!-- HERO SECTION: EDITORIAL FASHION & MARKETING SLATE -->
-    <section class="hero-section">
-      <div class="hero-container">
-        
-        <!-- Top Status Pill -->
-        <div class="hero-badge-wrap">
-          <span class="hero-status-pill">
-            <span class="status-dot"></span> OPEN FOR PLACEMENTS & CREATIVE COLLABORATIONS 2026
-          </span>
-          <span class="handwritten-est">Est. 2026</span>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>LANCASTER UNIVERSITY • ADVERTISING & DIGITAL MARKETING</span>
         </div>
 
-        <!-- Big Display Typography matching moodboard 1.png -->
-        <div class="hero-title-group">
-          <span class="handwritten-greeting">Hello, I'm</span>
-          <h1 class="hero-main-title">
-            ELLA ROSE <br>
-            <span class="title-highlight">BOWIS</span>
-          </h1>
-          <div class="hero-subtitle-bar">
-            <span class="sub-pill left-pill">ADVERTISING STUDENT</span>
-            <span class="sub-dot">✦</span>
-            <span class="sub-pill right-pill">MARKETING STUDENT</span>
-          </div>
-        </div>
+        <h1 class="hero-title">
+          WHERE THE CROWD ROARS,<br>
+          <span class="text-gradient">THE BRAND BELONGS.</span>
+        </h1>
 
-        <!-- Hero Manifesto Quote -->
-        <div class="hero-manifesto">
-          <p class="manifesto-lead">
-            “Where the crowd roars, the brand belongs.”
-          </p>
-          <p class="manifesto-desc">
-            Advertising and Digital Marketing student at <strong>Lancaster University</strong>. I turn fandom into stories, stories into communities, and communities into lasting brand loyalty across <strong>sports, automotive, entertainment, and culture</strong>.
-          </p>
-        </div>
+        <p class="hero-desc">
+          Hi, I’m <strong>Ella Rose Bowis</strong> — an advertising and digital marketing student passionate about turning live culture, sport, and entertainment into compelling brand campaigns that stick.
+        </p>
 
-        <!-- Action CTAs -->
         <div class="hero-actions">
-          <a href="#campaigns" class="btn btn-primary">
-            <span>Explore Campaigns</span>
-            <span class="btn-arrow">↓</span>
-          </a>
-          <a href="#about" class="btn btn-secondary">
-            <span>Read Bio & Approach</span>
-            <span class="btn-arrow">➔</span>
-          </a>
+          <a href="#campaigns" class="btn btn-primary">Explore Campaigns ↓</a>
+          <a href="#about" class="btn btn-ghost">About My Work ➔</a>
         </div>
 
-        <!-- Industry Chips -->
-        <div class="hero-chips">
-          <span class="chip">🏎️ Formula 1</span>
-          <span class="chip">⚽ Live Sport</span>
-          <span class="chip">🎬 Film & Trailers</span>
-          <span class="chip">📺 Television Promos</span>
-          <span class="chip">🎭 West End Theatre</span>
-          <span class="chip">🎵 Music & Festivals</span>
+        <!-- Metric Badges -->
+        <div class="hero-tags">
+          <span class="htag">🏎️ Formula 1 & Automotive</span>
+          <span class="htag">⚽ Matchday Fan Culture</span>
+          <span class="htag">🎬 Entertainment & Trailers</span>
+          <span class="htag">📱 Short-Form & Viral UGC</span>
+          <span class="htag">🎭 Live Theatre Promotion</span>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 1: SELECTED CAMPAIGNS & SPEC ADS (16:9) -->
-    <section class="section-container" id="campaigns">
-      <div class="section-heading-wrap">
-        <div class="section-kicker">01 // SELECTED WORK</div>
-        <h2 class="section-title">CREATIVE CAMPAIGNS & SPEC ADS</h2>
-        <p class="section-subtitle">Spec advertising campaigns designed to capture culture, evoke emotion, and build high-impact brand recall.</p>
+    <!-- SECTION: FEATURED CAMPAIGNS & SPEC ADS (16:9) -->
+    <section class="section-wrap" id="campaigns">
+      <div class="section-head">
+        <span class="section-num">01 / FEATURED WORK</span>
+        <h2 class="section-h2">CAMPAIGNS & SPEC ADS</h2>
+        <p class="section-p">Commercial spec ads, brand positioning cuts, and visual identity projects.</p>
       </div>
 
-      <!-- Category Filter Pills -->
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">All Work</button>
-        <button class="filter-btn" data-filter="automotive">🏎️ Automotive & Sport</button>
-        <button class="filter-btn" data-filter="entertainment">🎬 Film & Entertainment</button>
-        <button class="filter-btn" data-filter="brand">🎨 Brand Identity</button>
+      <!-- Filter Tabs -->
+      <div class="tab-filter">
+        <button class="tab-btn active" data-filter="all">All Projects</button>
+        <button class="tab-btn" data-filter="automotive">Automotive & Sport</button>
+        <button class="tab-btn" data-filter="entertainment">Film & Entertainment</button>
+        <button class="tab-btn" data-filter="brand">Brand Identity</button>
       </div>
 
-      <!-- Dynamic Grid of Campaigns -->
-      <div class="campaigns-grid" id="campaignsGrid">
-        <!-- Rendered dynamically by app.js -->
+      <!-- Campaigns Grid -->
+      <div class="campaign-grid" id="campaignGrid">
+        <!-- Rendered by JS -->
       </div>
     </section>
 
-    <!-- SECTION 2: VERTICAL SOCIAL CAMPAIGNS & UGC (9:16) -->
-    <section class="section-container" id="reels">
-      <div class="section-heading-wrap">
-        <div class="section-kicker">02 // SOCIAL CONTENT SPRINT</div>
-        <h2 class="section-title">SHORT-FORM & TIKTOK CAMPAIGNS (9:16)</h2>
-        <p class="section-subtitle">Fast-paced, hook-driven social video content engineered for algorithmic retention on TikTok, Reels, and YouTube Shorts.</p>
+    <!-- SECTION: SHORT FORM & TIKTOK CAMPAIGNS (9:16) -->
+    <section class="section-wrap" id="social">
+      <div class="section-head">
+        <span class="section-num">02 / SOCIAL FIRST</span>
+        <h2 class="section-h2">VERTICAL REELS & TIKTOK CUTS</h2>
+        <p class="section-p">Fast-turnaround, hook-driven vertical content (9:16) crafted for high viewer retention.</p>
       </div>
 
       <div class="reels-grid" id="reelsGrid">
-        <!-- Rendered dynamically by app.js: 8 vertical social campaigns -->
+        <!-- Rendered by JS -->
       </div>
     </section>
 
-    <!-- SECTION 3: A BIT ABOUT ME (Faithfully bringing assets/2.png to life) -->
-    <section class="section-container about-section" id="about">
-      <div class="about-card">
-        
-        <!-- Left Column: Editorial Content matching 2.png -->
-        <div class="about-text-col">
-          <span class="handwritten-script">Hello</span>
-          <h2 class="about-display-title">A BIT<br>ABOUT ME</h2>
+    <!-- SECTION: ABOUT ELLA -->
+    <section class="section-wrap" id="about">
+      <div class="about-grid">
+        <div class="about-card-visual">
+          <div class="about-img-frame">
+            <img src="assets/2.png" alt="Ella Rose Bowis workspace" class="about-img" onerror="this.onerror=null; this.src='../assets/2.png';">
+          </div>
+          <div class="about-img-caption">
+            <span class="caption-title">ELLA ROSE BOWIS</span>
+            <span class="caption-sub">Advertising & Digital Marketing • Lancaster University</span>
+          </div>
+        </div>
 
-          <div class="about-body">
+        <div class="about-card-content">
+          <span class="section-num">ABOUT THE CREATOR</span>
+          <h2 class="about-heading">A BIT ABOUT ME</h2>
+
+          <div class="about-bio">
             <p>
               I’m Ella, a creative and enthusiastic <strong>Advertising and Digital Marketing student</strong> at <strong>Lancaster University</strong>, passionate about the power of marketing to tell stories, connect with audiences and bring ideas to life.
             </p>
@@ -173,272 +146,184 @@
               Through my experience in <strong>social media marketing, content creation</strong> and promoting live theatre, I’m developing my skills in <strong>creating engaging content</strong>, understanding audiences and bringing <strong>fresh perspectives</strong> to every project.
             </p>
             <p>
-              I’m a <strong>hardworking, reliable</strong> and <strong>positive</strong> person who loves taking on new challenges, collaborating with others and <strong>thinking outside the box</strong>. I’m excited to continue learning, experiment with new ideas and <strong>gain hands-on industry experience</strong> as I work towards a career in <strong>creative marketing and advertising</strong>.
+              I’m a hardworking, reliable and positive person who loves taking on new challenges, collaborating with others and <strong>thinking outside the box</strong>. I’m excited to gain hands-on industry experience as I work towards a career in <strong>creative marketing and advertising</strong>.
             </p>
           </div>
 
-          <!-- Key Competencies Pills -->
-          <div class="skills-block">
-            <h4 class="skills-heading">SKILLS & CREATIVE TOOLKIT</h4>
-            <div class="skills-chips">
-              <span class="skill-pill">Campaign Strategy</span>
-              <span class="skill-pill">Social Media Marketing</span>
-              <span class="skill-pill">Audience Insights</span>
-              <span class="skill-pill">Content Creation</span>
-              <span class="skill-pill">Brand Positioning</span>
-              <span class="skill-pill">Video Storytelling</span>
-              <span class="skill-pill">Copywriting & Treatment Decks</span>
-              <span class="skill-pill">Trend Analysis</span>
+          <div class="skills-wrap">
+            <span class="skills-label">KEY SKILLS & FOCUS AREAS</span>
+            <div class="skills-list">
+              <span class="sk-pill">Campaign Strategy</span>
+              <span class="sk-pill">Social Media Marketing</span>
+              <span class="sk-pill">Audience Insights</span>
+              <span class="sk-pill">Short-Form Video Editing</span>
+              <span class="sk-pill">Creative Copywriting</span>
+              <span class="sk-pill">Brand Positioning</span>
+              <span class="sk-pill">Treatment Decks</span>
             </div>
-          </div>
-        </div>
-
-        <!-- Right Column: Visual Desk Photo & Card matching 1.png/2.png -->
-        <div class="about-visual-col">
-          <div class="about-visual-card">
-            <div class="doodle-star star-card">★</div>
-            <div class="about-image-frame">
-              <img src="assets/2.png" alt="Ella Rose Bowis - Creative desk and workspace" class="about-feature-img" onerror="this.onerror=null; this.src='../assets/2.png';">
-            </div>
-            <div class="about-card-footer">
-              <div class="footer-meta">
-                <span class="footer-name">ELLA ROSE BOWIS</span>
-                <span class="footer-uni">Lancaster University • Class of 2026</span>
-              </div>
-              <span class="footer-badge">Available for 2026 Placements</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION 4: THE 6 WORLDS OF MARKETING (Inspired by her Marketing Moodboard) -->
-    <section class="section-container pillars-section" id="pillars">
-      <div class="section-heading-wrap">
-        <div class="section-kicker">03 // STRATEGIC VISION</div>
-        <h2 class="section-title">THE SIX WORLDS OF MARKETING</h2>
-        <p class="section-subtitle">“Every great campaign starts with an audience that cares.” Emotion, energy, and live experience connect all six worlds.</p>
-      </div>
-
-      <div class="pillars-grid">
-        <!-- 01 Formula 1 -->
-        <div class="pillar-card f1-pillar">
-          <span class="pillar-number">01</span>
-          <small class="pillar-category">FORMULA 1</small>
-          <h3 class="pillar-headline">Speed meets story</h3>
-          <p class="pillar-text">Global audiences, split-second drama and a brand on every car. Marketing a sport that never stands still.</p>
-          <div class="pillar-tags">
-            <span>Sponsorship</span>
-            <span>Digital content</span>
-            <span>Global reach</span>
-          </div>
-        </div>
-
-        <!-- 02 Sports -->
-        <div class="pillar-card sports-pillar">
-          <span class="pillar-number">02</span>
-          <small class="pillar-category">SPORTS</small>
-          <h3 class="pillar-headline">Community on matchday</h3>
-          <p class="pillar-text">Turning loyalty into belonging, from the stadium terraces to the timeline, for clubs, athletes and events.</p>
-          <div class="pillar-tags">
-            <span>Athlete branding</span>
-            <span>Social fandom</span>
-            <span>Live events</span>
-          </div>
-        </div>
-
-        <!-- 03 Film -->
-        <div class="pillar-card film-pillar">
-          <span class="pillar-number">03</span>
-          <small class="pillar-category">FILM</small>
-          <h3 class="pillar-headline">The trailer is the first scene</h3>
-          <p class="pillar-text">Building anticipation, suspense and making audiences need to be in the cinema on opening night.</p>
-          <div class="pillar-tags">
-            <span>Launch campaigns</span>
-            <span>Trailers</span>
-            <span>Premieres</span>
-          </div>
-        </div>
-
-        <!-- 04 TV -->
-        <div class="pillar-card tv-pillar">
-          <span class="pillar-number">04</span>
-          <small class="pillar-category">TELEVISION</small>
-          <h3 class="pillar-headline">Appointment viewing</h3>
-          <p class="pillar-text">Crafting campaigns that get a whole country talking, from the initial teaser to the viral watercooler moment.</p>
-          <div class="pillar-tags">
-            <span>Promos</span>
-            <span>Streaming</span>
-            <span>Audience insight</span>
-          </div>
-        </div>
-
-        <!-- 05 Theatre -->
-        <div class="pillar-card theatre-pillar">
-          <span class="pillar-number">05</span>
-          <small class="pillar-category">THEATRE</small>
-          <h3 class="pillar-headline">Live, limited, unforgettable</h3>
-          <p class="pillar-text">Filling houses with the magic of the West End and regional productions, one curtain-up at a time.</p>
-          <div class="pillar-tags">
-            <span>Ticketing</span>
-            <span>Press & PR</span>
-            <span>Brand heritage</span>
-          </div>
-        </div>
-
-        <!-- 06 Music -->
-        <div class="pillar-card music-pillar">
-          <span class="pillar-number">06</span>
-          <small class="pillar-category">MUSIC</small>
-          <h3 class="pillar-headline">Amplify the artist</h3>
-          <p class="pillar-text">Helping artists find their audience through stadium tours, releases, festivals and authentic fan connection.</p>
-          <div class="pillar-tags">
-            <span>Artist branding</span>
-            <span>Tours</span>
-            <span>Fan connection</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: GET IN TOUCH / PITCH TO ELLA -->
-    <section class="section-container contact-section" id="contact">
-      <div class="contact-card">
-        <div class="contact-header">
-          <span class="handwritten-script">Let's Connect</span>
-          <h2 class="contact-title">START A CREATIVE CONVERSATION</h2>
-          <p class="contact-intro">
-            Looking for an ambitious, driven marketing student for an agency placement, summer internship, graduate scheme, or creative campaign collaboration? I'd love to chat.
+    <!-- SECTION: THE 6 WORLDS -->
+    <section class="section-wrap" id="worlds">
+      <div class="section-head">
+        <span class="section-num">03 / CREATIVE SCOPE</span>
+        <h2 class="section-h2">THE SIX WORLDS OF MARKETING</h2>
+        <p class="section-p">“Every great campaign starts with an audience that cares.” Emotion, energy, and live experience connect all six worlds.</p>
+      </div>
+
+      <div class="worlds-grid">
+        <div class="world-card w-f1">
+          <span class="w-num">01</span>
+          <small class="w-cat">FORMULA 1</small>
+          <h3>Speed Meets Story</h3>
+          <p>Global audiences, split-second drama and a brand on every car. Marketing a sport that never stands still.</p>
+          <div class="w-tags"><span>Sponsorship</span><span>Digital Content</span><span>Global Reach</span></div>
+        </div>
+
+        <div class="world-card w-sport">
+          <span class="w-num">02</span>
+          <small class="w-cat">SPORTS</small>
+          <h3>Community on Matchday</h3>
+          <p>Turning loyalty into belonging, from the stadium terraces to the timeline, for clubs, athletes and events.</p>
+          <div class="w-tags"><span>Athlete Branding</span><span>Fan Engagement</span><span>Live Events</span></div>
+        </div>
+
+        <div class="world-card w-film">
+          <span class="w-num">03</span>
+          <small class="w-cat">FILM</small>
+          <h3>The Trailer is the First Scene</h3>
+          <p>Building anticipation and making audiences need to be in the cinema room on opening night.</p>
+          <div class="w-tags"><span>Launch Campaigns</span><span>Trailers</span><span>Premieres</span></div>
+        </div>
+
+        <div class="world-card w-tv">
+          <span class="w-num">04</span>
+          <small class="w-cat">TELEVISION</small>
+          <h3>Appointment Viewing</h3>
+          <p>Crafting campaigns that get a whole country talking, from the promo to the watercooler moment.</p>
+          <div class="w-tags"><span>Promos</span><span>Streaming</span><span>Audience Insight</span></div>
+        </div>
+
+        <div class="world-card w-theatre">
+          <span class="w-num">05</span>
+          <small class="w-cat">THEATRE</small>
+          <h3>Live, Limited, Unforgettable</h3>
+          <p>Filling houses with the magic of the West End and regional theatre, one curtain-up at a time.</p>
+          <div class="w-tags"><span>Ticketing</span><span>Press & PR</span><span>Brand Heritage</span></div>
+        </div>
+
+        <div class="world-card w-music">
+          <span class="w-num">06</span>
+          <small class="w-cat">MUSIC</small>
+          <h3>Amplify the Artist</h3>
+          <p>Helping artists find their audience through stadium tours, releases, festivals and authentic fan connection.</p>
+          <div class="w-tags"><span>Artist Branding</span><span>Tours</span><span>Festivals</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CONTACT / PLACEMENTS -->
+    <section class="section-wrap" id="contact">
+      <div class="contact-box">
+        <div class="contact-info">
+          <span class="section-num">LET'S CONNECT</span>
+          <h2 class="contact-h2">INTERESTED IN WORKING TOGETHER?</h2>
+          <p class="contact-sub">
+            I’m actively looking for agency placements, summer internships, graduate opportunities, and freelance campaign collaborations.
           </p>
-        </div>
 
-        <div class="contact-grid">
-          <!-- Direct Details -->
-          <div class="contact-info-col">
-            <div class="info-item">
-              <span class="info-label">EMAIL ADDRESS</span>
-              <a href="mailto:bbristow.uk@gmail.com" class="info-val">bbristow.uk@gmail.com</a>
+          <div class="contact-details">
+            <div class="cd-item">
+              <span class="cd-label">DIRECT EMAIL</span>
+              <a href="mailto:bbristow.uk@gmail.com" class="cd-link">bbristow.uk@gmail.com</a>
             </div>
-
-            <div class="info-item">
-              <span class="info-label">CURRENT EDUCATION</span>
-              <span class="info-val">BSc Advertising & Marketing, Lancaster University</span>
+            <div class="cd-item">
+              <span class="cd-label">UNIVERSITY</span>
+              <span class="cd-text">Lancaster University (UK)</span>
             </div>
-
-            <div class="info-item">
-              <span class="info-label">LOCATION & MOBILITY</span>
-              <span class="info-val">United Kingdom (London, Manchester, North West) • Remote</span>
-            </div>
-
-            <div class="social-links">
-              <span class="info-label">CONNECT ACROSS PLATFORMS</span>
-              <div class="social-pills">
-                <a href="https://linkedin.com" target="_blank" rel="noopener" class="pill-link">LinkedIn ↗</a>
-                <a href="https://instagram.com" target="_blank" rel="noopener" class="pill-link">Instagram ↗</a>
-                <a href="https://tiktok.com" target="_blank" rel="noopener" class="pill-link">TikTok ↗</a>
+            <div class="cd-item">
+              <span class="cd-label">SOCIAL PROFILES</span>
+              <div class="social-row">
+                <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener">Instagram ↗</a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok ↗</a>
               </div>
             </div>
           </div>
-
-          <!-- Quick Message Form -->
-          <form class="contact-form" id="contactForm" onsubmit="event.preventDefault(); window.handlePitchSubmit();">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="senderName">YOUR NAME / AGENCY</label>
-                <input type="text" id="senderName" placeholder="e.g. Ogilvy / WPP / Alex Turner" required>
-              </div>
-              <div class="form-group">
-                <label for="senderEmail">EMAIL ADDRESS</label>
-                <input type="email" id="senderEmail" placeholder="you@company.com" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="inquiryType">OPPORTUNITY TYPE</label>
-              <select id="inquiryType">
-                <option value="placement">Summer Internship / Placement 2026</option>
-                <option value="graduate">Graduate Scheme / Full-Time Role</option>
-                <option value="freelance">Freelance Social & Campaign Project</option>
-                <option value="networking">Creative Mentorship / Coffee Chat</option>
-                <option value="other">Other Collaboration</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="senderMessage">MESSAGE / BRIEF</label>
-              <textarea id="senderMessage" rows="4" placeholder="Tell me about the role, campaign, or idea..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-block">
-              <span>Send Message</span>
-              <span class="btn-arrow">➔</span>
-            </button>
-
-            <div class="form-status" id="formStatus"></div>
-          </form>
         </div>
+
+        <form class="contact-form" id="contactForm" onsubmit="event.preventDefault(); window.submitMessage();">
+          <div class="form-field">
+            <label for="cName">Your Name & Company</label>
+            <input type="text" id="cName" placeholder="e.g. Sarah Jenkins / Ogilvy" required>
+          </div>
+          <div class="form-field">
+            <label for="cEmail">Email Address</label>
+            <input type="email" id="cEmail" placeholder="you@company.com" required>
+          </div>
+          <div class="form-field">
+            <label for="cType">Opportunity Type</label>
+            <select id="cType">
+              <option value="Placement / Internship">Agency Placement / Summer Internship 2026</option>
+              <option value="Graduate Role">Graduate Opportunity / Scheme</option>
+              <option value="Freelance Project">Freelance Campaign / Social Sprint</option>
+              <option value="Coffee Chat">Mentorship / Coffee Chat</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="cMsg">Message</label>
+            <textarea id="cMsg" rows="4" placeholder="Tell me about the role or project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message ➔</button>
+          <div id="formFeedback" class="form-feedback"></div>
+        </form>
       </div>
     </section>
   </main>
 
-  <!-- CASE STUDY & CAMPAIGN LIGHTBOX MODAL -->
-  <div class="campaign-modal" id="campaignModal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-backdrop" id="modalBackdrop"></div>
-    <div class="modal-box">
-      <div class="modal-top">
-        <div class="modal-meta-tag" id="modalCategory">CASE STUDY // AUTOMOTIVE</div>
-        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">✕</button>
+  <!-- VIDEO MODAL PLAYER -->
+  <div class="modal" id="videoModal" aria-hidden="true">
+    <div class="modal-bg" id="modalBg"></div>
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <div>
+          <span class="modal-tag" id="mTag">CAMPAIGN CASE STUDY</span>
+          <h3 class="modal-title" id="mTitle">Project Title</h3>
+        </div>
+        <button class="modal-x" id="modalX" aria-label="Close">✕</button>
       </div>
 
-      <div class="modal-player-wrap">
-        <div class="modal-player" id="modalPlayerContainer">
-          <!-- Dynamic Iframe or Video -->
+      <div class="modal-body">
+        <div class="modal-screen" id="mScreen">
+          <!-- Dynamic Iframe / Video -->
         </div>
       </div>
 
-      <div class="modal-details">
-        <h3 class="modal-heading" id="modalTitle">Porsche 911 Spec Commercial</h3>
-        <p class="modal-description" id="modalDescription">Campaign brief description goes here.</p>
-
-        <div class="modal-strategy-grid">
-          <div class="strat-item">
-            <span class="strat-label">TARGET AUDIENCE</span>
-            <span class="strat-val" id="modalAudience">Gen-Z & Millennials passionate about motorsport & luxury lifestyle</span>
-          </div>
-          <div class="strat-item">
-            <span class="strat-label">CAMPAIGN OBJECTIVE</span>
-            <span class="strat-val" id="modalObjective">Build emotional brand affinity through adrenaline-fueled storytelling</span>
-          </div>
-          <div class="strat-item">
-            <span class="strat-label">CORE CHANNELS</span>
-            <span class="strat-val" id="modalChannels">TikTok, Instagram Reels, YouTube Shorts, Web</span>
+      <div class="modal-foot">
+        <div class="modal-info">
+          <p id="mDesc" class="m-desc"></p>
+          <div class="m-specs">
+            <div><span class="sp-k">AUDIENCE</span><span class="sp-v" id="mAud"></span></div>
+            <div><span class="sp-k">FORMAT</span><span class="sp-v" id="mFmt"></span></div>
           </div>
         </div>
-
-        <div class="modal-footer-bar">
-          <div class="player-source-toggles" id="playerSourceToggles">
-            <!-- Dynamic toggles: Drive stream vs Local MP4 -->
-          </div>
-          <a href="#" id="modalExternalLink" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-            <span>Open in Google Drive</span> ↗
-          </a>
+        <div class="modal-btns">
+          <button class="btn btn-sm btn-primary" id="btnStream" onclick="window.switchSource('drive')">Stream Preview</button>
+          <button class="btn btn-sm btn-ghost" id="btnLocal" onclick="window.switchSource('local')">Local File</button>
+          <a href="#" id="mDriveLink" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Google Drive ↗</a>
         </div>
       </div>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-wrap">
-      <div class="footer-brand-side">
-        <span class="footer-logo">ELLA ROSE BOWIS</span>
-        <p class="footer-tagline">Advertising and Digital Marketing Student • Lancaster University</p>
-      </div>
-      <div class="footer-right-side">
-        <span class="footer-copy">© 2026 Ella Rose Bowis. Crafted with strategy, passion & rhythm.</span>
-        <a href="#" class="back-to-top">Back to top ↑</a>
-      </div>
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 Ella Rose Bowis • Advertising & Digital Marketing</span>
+      <a href="#" class="to-top">Back to top ↑</a>
     </div>
   </footer>
 
