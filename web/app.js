@@ -1,245 +1,202 @@
 /**
- * ELLA FILMS & EDITS // CORE APPLICATION LOGIC
- * Cinematic portfolio application with interactive film player, 
- * live timecode HUD, dynamic film strip, and project showcases.
+ * ELLA ROSE BOWIS // ADVERTISING & DIGITAL MARKETING PORTFOLIO
+ * Core application script for campaign showcases, category filters,
+ * interactive case study modal, and light/dark theme toggling.
  */
 
-// Project Data Registry
-const PORTFOLIO_DATA = {
+// ==============================================================================
+// CAMPAIGN DATA REGISTRY
+// ==============================================================================
+const CAMPAIGN_REGISTRY = {
   featured: [
     {
-      id: "porsche-spec",
-      title: "Porsche 911 Spec Commercial",
-      category: "COMMERCIAL SPEC AD // 16:9",
-      aspect: "16:9 Cinema",
-      software: "Premiere Pro • DaVinci Resolve Studio",
-      description: "High-octane automotive commercial cut featuring precision speed ramps, roaring acoustic foley, and moody film-emulation color grading.",
+      id: "porsche-heritage",
+      client: "Porsche UK • Spec Campaign",
+      title: "The Art of Precision: 911 Heritage & Adrenaline",
+      category: "automotive",
+      aspect: "16:9 Widescreen",
+      duration: "00:45",
+      badge: "SPEC COMMERCIAL",
+      objective: "Drive luxury performance awareness among young aspirational drivers by merging speed-ramp editing with cinematic acoustic foley.",
+      audience: "21–35 motorsport and luxury automotive enthusiasts",
+      channels: "Instagram Reels, YouTube Pre-Roll, Paid Social",
       driveId: "1UVvJkHaoTgN7607sZZx4kE_z1E7sMu4Q",
       localFile: "Porsche (1).mp4",
-      bgGradient: "linear-gradient(135deg, #1b0c0f, #3b0a17, #0d0f17)",
-      tag: "FEATURED SPEC",
-      duration: "00:45",
-      fps: "24 FPS"
+      bgGradient: "linear-gradient(135deg, #1f0b0e, #360f14, #0d0f17)"
     },
     {
-      id: "f1-apex",
-      title: "Formula 1 High-Octane Apex Cut",
-      category: "SPORTS & MOTORSPORT // 16:9",
-      aspect: "16:9 Cinema",
-      software: "Premiere Pro • After Effects",
-      description: "Adrenaline-fueled Formula 1 edit synced to razor-sharp audio transients, kinetic speed ramps, and trackside telemetry aesthetics.",
+      id: "f1-apex-story",
+      client: "Formula 1 • Fan Culture Campaign",
+      title: "F1 Split-Second Drama: Speed Meets Story",
+      category: "automotive",
+      aspect: "16:9 Widescreen",
+      duration: "00:38",
+      badge: "SPORTS MARKETING",
+      objective: "Capture split-second track drama and fan emotion, syncing audio transients to race telemetry pacing for high-velocity engagement.",
+      audience: "Global Gen-Z & millennial motorsport fans",
+      channels: "TikTok, Instagram, Twitter/X, Race Weekend Promos",
       driveId: "1FoNxw-EIhaChn82EOmuq_8iPCtwomzqv",
       localFile: "f1 vid.mp4",
-      bgGradient: "linear-gradient(135deg, #0a1420, #0d2847, #07080b)",
-      tag: "MOTORSPORT",
-      duration: "00:38",
-      fps: "24 FPS"
+      bgGradient: "linear-gradient(135deg, #0c1624, #122c4d, #080a0f)"
     },
     {
-      id: "netflix-horror",
-      title: "Netflix Horror / Thriller Campaign Ad",
-      category: "ENTERTAINMENT // 16:9",
-      aspect: "16:9 Cinema",
-      software: "DaVinci Resolve • Sound Design",
-      description: "Psychological horror trailer cut focusing on atmospheric build-ups, heartbeat sub-drops, and unsettling jump cuts that heighten tension.",
+      id: "netflix-midnight",
+      client: "Netflix UK • Entertainment Spec Ad",
+      title: "Midnight Thriller: Building Viewer Anticipation",
+      category: "entertainment",
+      aspect: "16:9 Widescreen",
+      duration: "00:52",
+      badge: "ENTERTAINMENT PROMO",
+      objective: "Hook streaming viewers in the first 3 seconds using psychological sound design, sub-bass drops, and sudden cutaways.",
+      audience: "18–34 horror, thriller, and streaming drama fans",
+      channels: "TikTok Spark Ads, Instagram Stories, Trailer Preroll",
       driveId: "1mP5mhi3Erc03GbWidzZ5gSl3jjcvR0dV",
       localFile: "netflix horror ad.mp4",
-      bgGradient: "linear-gradient(135deg, #1f0808, #2e0b0b, #050608)",
-      tag: "TRAILER SPEC",
-      duration: "00:52",
-      fps: "24 FPS"
-    }
-  ],
-
-  shortForm: [
-    {
-      id: "reel-1",
-      title: "Fast-Paced Hook & Trend Cut",
-      category: "SHORT FORM // 9:16",
-      aspect: "9:16 Mobile",
-      software: "Premiere Pro • CapCut Pro",
-      driveId: "1y4WqR_U5j9vFw-4qv9QPEfiLNV4qunTi",
-      localFile: "WhatsApp Video 2026-10-11 at 02.02.49.mp4",
-      bgGradient: "linear-gradient(180deg, #1f1124, #0d0a14)",
-      tag: "VIRAL HOOK",
-      duration: "00:15"
+      bgGradient: "linear-gradient(135deg, #240a0a, #380d0d, #08090d)"
     },
     {
-      id: "reel-2",
-      title: "Kinetic Montage & Sound Design",
-      category: "SHORT FORM // 9:16",
-      aspect: "9:16 Mobile",
-      software: "Premiere Pro • After Effects",
-      driveId: "1ljpQr5U0jIVoKuOTf_4z_7dXs8CHuIAb",
-      localFile: "WhatsApp Video 2026-10-11 at 02.02.58.mp4",
-      bgGradient: "linear-gradient(180deg, #101c26, #090e15)",
-      tag: "SOUND DESIGN",
-      duration: "00:18"
-    },
-    {
-      id: "reel-3",
-      title: "High-Retention Engagement Beat",
-      category: "SHORT FORM // 9:16",
-      aspect: "9:16 Mobile",
-      software: "Premiere Pro",
-      driveId: "1sjgM9AG4Eot3E5J_nn7AeO7gIRfQWP3R",
-      localFile: "WhatsApp Video 2026-10-11 at 02.03.06.mp4",
-      bgGradient: "linear-gradient(180deg, #261610, #130a07)",
-      tag: "RETENTION",
-      duration: "00:14"
-    },
-    {
-      id: "reel-4",
-      title: "Atmospheric Visual Storytelling",
-      category: "SHORT FORM // 9:16",
-      aspect: "9:16 Mobile",
-      software: "DaVinci Resolve",
-      driveId: "1_eGnv9Kmm4WukEcZnJUmhsg21Q8ZN9Y-",
-      localFile: "WhatsApp Video 2026-10-11 at 02.03.14.mp4",
-      bgGradient: "linear-gradient(180deg, #1c1024, #0b0711)",
-      tag: "CINEMATIC",
-      duration: "00:22"
-    },
-    {
-      id: "reel-5",
-      title: "Dynamic Beat-Sync & Match Cut",
-      category: "SHORT FORM // 9:16",
-      aspect: "9:16 Mobile",
-      software: "Premiere Pro • After Effects",
-      driveId: "1FVFo9kL8ASGaJqSizqj-_utDHmxDafis",
-      localFile: "WhatsApp Video 2026-10-11 at 02.03.20.mp4",
-      bgGradient: "linear-gradient(180deg, #0e1e24, #080f12)",
-      tag: "BEAT SYNC",
-      duration: "00:16"
-    },
-    {
-      id: "reel-6",
-      title: "Color Pop & Film Emulation",
-      category: "SHORT FORM // 9:16",
-      aspect: "9:16 Mobile",
-      software: "DaVinci Resolve Studio",
-      driveId: "1petErbc1K4UomDnJW56wQaxCVE1DvUs-",
-      localFile: "WhatsApp Video 2026-10-11 at 02.03.24.mp4",
-      bgGradient: "linear-gradient(180deg, #26101c, #13080e)",
-      tag: "COLOR GRADE",
-      duration: "00:20"
-    },
-    {
-      id: "reel-7",
-      title: "Lifestyle Rhythm & Pace",
-      category: "SHORT FORM // 9:16",
-      aspect: "9:16 Mobile",
-      software: "Premiere Pro",
-      driveId: "1mY978BVW6y2y6DPzm6MJ0xrGnysCF8oq",
-      localFile: "WhatsApp Video 2026-10-11 at 02.03.31.mp4",
-      bgGradient: "linear-gradient(180deg, #182218, #0a0f0a)",
-      tag: "LIFESTYLE",
-      duration: "00:19"
-    },
-    {
-      id: "reel-8",
-      title: "Seamless Motion & Loop Edit",
-      category: "SHORT FORM // 9:16",
-      aspect: "9:16 Mobile",
-      software: "Premiere Pro • After Effects",
-      driveId: "17YEdKKGOXfsMnv9EmDAZxp0RK9n7ijCh",
-      localFile: "WhatsApp Video 2026-10-11 at 02.03.38.mp4",
-      bgGradient: "linear-gradient(180deg, #1d1d28, #0a0a0f)",
-      tag: "SEAMLESS LOOP",
-      duration: "00:15"
-    }
-  ],
-
-  brand: [
-    {
-      id: "car-detailing-brand",
-      title: "Modern Car Detailing Brand Identity",
-      category: "BRANDING & PRINT // STILL",
-      aspect: "Business Collateral",
-      software: "Adobe Photoshop • Illustrator",
-      description: "Sleek automotive identity kit featuring matte black textures, precision scarlet accents, and premium business collateral.",
+      id: "detailing-brand",
+      client: "Modern Car Detailing • Visual Identity",
+      title: "Precision Detailing: Bespoke Brand Collateral",
+      category: "brand",
+      aspect: "Brand Collateral",
+      duration: "Design Kit",
+      badge: "BRAND IDENTITY",
+      objective: "Position an automotive care studio as elite and meticulous with matte charcoal palettes and precision crimson accents.",
+      audience: "Supercar and luxury vehicle owners seeking bespoke service",
+      channels: "Print Collateral, Business Cards, Digital Media",
       driveId: "18pTfUrs7_dVCiTOCymsQ6N8UKXMapnXv",
       isImage: true,
-      tag: "BRAND DESIGN",
-      bgGradient: "linear-gradient(135deg, #140707, #240a0a, #0a0505)"
+      bgGradient: "linear-gradient(135deg, #140909, #290d0d, #09090b)"
     },
     {
-      id: "hot-pink-version",
-      title: "Neon Hot Pink Creative Treatment",
-      category: "VISUAL IDENTITY // STILL",
-      aspect: "Brand Concept",
-      software: "Illustrator • Photoshop",
-      description: "Bold, cyber-inspired color edition exploring high-energy hot pink typography and high-impact visual aesthetics.",
+      id: "hot-pink-identity",
+      client: "Creative Concept Lab • Visual Direction",
+      title: "Cyber Neon: High-Energy Creative Treatment",
+      category: "brand",
+      aspect: "Concept Deck",
+      duration: "Visual Edition",
+      badge: "CREATIVE CONCEPT",
+      objective: "Experiment with electric neon palettes and high-contrast typography to maximize thumb-stopping power on social feeds.",
+      audience: "Youth culture, digital native consumers",
+      channels: "Social Media Campaigns, Merch & Brand Collateral",
       driveId: "1URhXERrwccCf1XBT1uCq1nnfB6QhynhJ",
       isImage: true,
-      tag: "COLOR EXPLORATION",
-      bgGradient: "linear-gradient(135deg, #2b0416, #4d0426, #120108)"
+      bgGradient: "linear-gradient(135deg, #290415, #4a0525, #0f0108)"
     },
     {
-      id: "campaign-brief",
-      title: "Campaign Treatment & Strategy Deck",
-      category: "PRODUCTION TREATMENT // DOC",
+      id: "campaign-brief-deck",
+      client: "University Strategic Brief • Treatment Deck",
+      title: "Integrated Marketing Campaign Treatment Deck",
+      category: "brand",
       aspect: "Production PDF",
-      software: "Creative Strategy • Production",
-      description: "Complete campaign architecture detailing target audience hooks, scene breakdowns, visual tone guidelines, and soundscapes.",
+      duration: "Strategy Brief",
+      badge: "CAMPAIGN STRATEGY",
+      objective: "Architect a comprehensive campaign treatment outlining target audience personas, emotional arcs, and multi-channel rollouts.",
+      audience: "Agency pitch panels, brand directors, marketing leads",
+      channels: "Strategy Treatment PDF, Creative Pitch Deck",
       driveId: "1LdiFZIfOVJDYaXaCqmH-uRv6sbo4IW9G",
       isDoc: true,
-      tag: "CAMPAIGN BRIEF",
-      bgGradient: "linear-gradient(135deg, #0b151e, #132433, #060b0f)"
+      bgGradient: "linear-gradient(135deg, #0e1824, #182e45, #070b10)"
     }
   ],
 
-  aboutImage: {
-    title: "The Face Behind The Brand",
-    driveId: "19_C-N1Ap7uNoCJrlELGRy0XwkR8OcwIm",
-    localFile: "The.png"
-  }
+  reels: [
+    {
+      id: "reel-hook",
+      title: "Fast-Paced Hook & Trend Cut",
+      objective: "Immediate visual hook within 0.8s for TikTok FYP",
+      badge: "VIRAL HOOK",
+      aspect: "9:16 Vertical",
+      duration: "00:15",
+      driveId: "1y4WqR_U5j9vFw-4qv9QPEfiLNV4qunTi",
+      localFile: "WhatsApp Video 2026-10-11 at 02.02.49.mp4",
+      bgGradient: "linear-gradient(180deg, #26122a, #0f0812)"
+    },
+    {
+      id: "reel-audio",
+      title: "Kinetic Montage & Audio Sync",
+      objective: "Rhythmic match cuts synced to trending audio transients",
+      badge: "AUDIO SYNC",
+      aspect: "9:16 Vertical",
+      duration: "00:18",
+      driveId: "1ljpQr5U0jIVoKuOTf_4z_7dXs8CHuIAb",
+      localFile: "WhatsApp Video 2026-10-11 at 02.02.58.mp4",
+      bgGradient: "linear-gradient(180deg, #142330, #090e14)"
+    },
+    {
+      id: "reel-retention",
+      title: "High-Retention Engagement Beat",
+      objective: "Engineered for 85%+ completion rate and rewatches",
+      badge: "RETENTION BEAT",
+      aspect: "9:16 Vertical",
+      duration: "00:14",
+      driveId: "1sjgM9AG4Eot3E5J_nn7AeO7gIRfQWP3R",
+      localFile: "WhatsApp Video 2026-10-11 at 02.03.06.mp4",
+      bgGradient: "linear-gradient(180deg, #2e1a12, #140b08)"
+    },
+    {
+      id: "reel-atmosphere",
+      title: "Atmospheric Visual Storytelling",
+      objective: "Cinematic grade and pacing for luxury lifestyle brand feel",
+      badge: "LIFESTYLE",
+      aspect: "9:16 Vertical",
+      duration: "00:22",
+      driveId: "1_eGnv9Kmm4WukEcZnJUmhsg21Q8ZN9Y-",
+      localFile: "WhatsApp Video 2026-10-11 at 02.03.14.mp4",
+      bgGradient: "linear-gradient(180deg, #22142c, #0d0712)"
+    },
+    {
+      id: "reel-beatsync",
+      title: "Dynamic Beat-Sync & Match Cut",
+      objective: "High-energy pacing designed for sports and fitness brand",
+      badge: "BEAT SYNC",
+      aspect: "9:16 Vertical",
+      duration: "00:16",
+      driveId: "1FVFo9kL8ASGaJqSizqj-_utDHmxDafis",
+      localFile: "WhatsApp Video 2026-10-11 at 02.03.20.mp4",
+      bgGradient: "linear-gradient(180deg, #122730, #081014)"
+    },
+    {
+      id: "reel-color",
+      title: "Vibrant Grade & Color Pop",
+      objective: "High saturation and contrast to stand out on mobile screens",
+      badge: "COLOR POP",
+      aspect: "9:16 Vertical",
+      duration: "00:20",
+      driveId: "1petErbc1K4UomDnJW56wQaxCVE1DvUs-",
+      localFile: "WhatsApp Video 2026-10-11 at 02.03.24.mp4",
+      bgGradient: "linear-gradient(180deg, #2c1220, #14080e)"
+    },
+    {
+      id: "reel-community",
+      title: "Lifestyle & Fan Culture Movement",
+      objective: "Highlighting authentic youth culture and community",
+      badge: "FAN CULTURE",
+      aspect: "9:16 Vertical",
+      duration: "00:19",
+      driveId: "1mY978BVW6y2y6DPzm6MJ0xrGnysCF8oq",
+      localFile: "WhatsApp Video 2026-10-11 at 02.03.31.mp4",
+      bgGradient: "linear-gradient(180deg, #1c2b1e, #0a110b)"
+    },
+    {
+      id: "reel-loop",
+      title: "Seamless Loop Social Activation",
+      objective: "Invisible loop ending that encourages instant re-watch",
+      badge: "SEAMLESS LOOP",
+      aspect: "9:16 Vertical",
+      duration: "00:15",
+      driveId: "17YEdKKGOXfsMnv9EmDAZxp0RK9n7ijCh",
+      localFile: "WhatsApp Video 2026-10-11 at 02.03.38.mp4",
+      bgGradient: "linear-gradient(180deg, #242433, #0c0c12)"
+    }
+  ]
 };
 
-// ==========================================================================
-// TIME-CODE GENERATOR (24 FPS CINEMATIC CLOCK)
-// ==========================================================================
-class CinematicTimecode {
-  constructor(elementId) {
-    this.element = document.getElementById(elementId);
-    this.hours = 0;
-    this.minutes = 1;
-    this.seconds = 24;
-    this.frames = 18;
-    this.fps = 24;
-    this.start();
-  }
-
-  start() {
-    setInterval(() => {
-      this.frames++;
-      if (this.frames >= this.fps) {
-        this.frames = 0;
-        this.seconds++;
-        if (this.seconds >= 60) {
-          this.seconds = 0;
-          this.minutes++;
-          if (this.minutes >= 60) {
-            this.minutes = 0;
-            this.hours++;
-          }
-        }
-      }
-      this.render();
-    }, 1000 / this.fps);
-  }
-
-  render() {
-    if (!this.element) return;
-    const pad = (n) => String(n).padStart(2, "0");
-    this.element.textContent = `${pad(this.hours)}:${pad(this.minutes)}:${pad(this.seconds)}:${pad(this.frames)}`;
-  }
-}
-
-// ==========================================================================
-// POSTER GENERATOR (HIGH QUALITY CINEMATIC SVG POSTERS)
-// ==========================================================================
-function createCinematicPosterSvg(title, category, iconText, gradient) {
+// ==============================================================================
+// POSTER & VISUAL GENERATOR
+// ==============================================================================
+function generateCampaignSvg(title, badge, iconText, gradient) {
   return `
     <div style="
       width: 100%;
@@ -256,232 +213,152 @@ function createCinematicPosterSvg(title, category, iconText, gradient) {
       <div style="
         position: absolute;
         inset: 0;
-        background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+        background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
         background-size: 16px 16px;
-        opacity: 0.5;
+        opacity: 0.45;
       "></div>
-      
-      <!-- Top Bar -->
+
+      <!-- Top Row -->
       <div style="display: flex; justify-content: space-between; align-items: center; z-index: 2;">
         <span style="
           font-family: 'Space Mono', monospace;
           font-size: 0.65rem;
-          color: rgba(255,255,255,0.6);
+          color: rgba(255,255,255,0.7);
           letter-spacing: 1px;
-        ">ELLA // CUT 2026</span>
-        <span style="font-size: 1.3rem; opacity: 0.85;">${iconText}</span>
+        ">ELLA ROSE BOWIS // 2026</span>
+        <span style="font-size: 1.3rem;">${iconText}</span>
       </div>
 
-      <!-- Center Logo / Title Preview -->
+      <!-- Center Title -->
       <div style="z-index: 2; text-align: center; margin: auto 0;">
         <div style="
-          font-family: 'Bebas Neue', sans-serif;
-          font-size: 1.8rem;
-          line-height: 1;
+          font-family: 'DM Serif Display', Georgia, serif;
+          font-size: 1.6rem;
+          line-height: 1.15;
           color: #fff;
-          letter-spacing: 1.5px;
-          text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+          letter-spacing: -0.5px;
+          text-shadow: 0 4px 20px rgba(0,0,0,0.85);
         ">${title}</div>
         <div style="
           font-family: 'Space Mono', monospace;
           font-size: 0.7rem;
-          color: #f5a623;
-          margin-top: 0.4rem;
-          letter-spacing: 1px;
-        ">${category}</div>
+          color: #ff2a6d;
+          margin-top: 0.5rem;
+          letter-spacing: 1.5px;
+          font-weight: 700;
+        ">${badge}</div>
       </div>
 
-      <!-- Bottom Bar: Clapper Timecode -->
-      <div style="display: flex; justify-content: space-between; align-items: center; z-index: 2; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.6rem;">
-        <span style="font-family: 'Space Mono', monospace; font-size: 0.65rem; color: #ff007f;">● 24 FPS CINEMA</span>
-        <span style="font-family: 'Space Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.5);">MASTER CUT</span>
+      <!-- Bottom Row -->
+      <div style="display: flex; justify-content: space-between; align-items: center; z-index: 2; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.5rem;">
+        <span style="font-family: 'Space Mono', monospace; font-size: 0.65rem; color: #ff1801; font-weight: 700;">★ CAMPAIGN CUT</span>
+        <span style="font-family: 'Space Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.5);">LANCASTER MKTG</span>
       </div>
     </div>
   `;
 }
 
-// ==========================================================================
+// ==============================================================================
 // RENDERERS
-// ==========================================================================
+// ==============================================================================
+function renderCampaigns(filter = "all") {
+  const container = document.getElementById("campaignsGrid");
+  if (!container) return;
 
-function renderFilmStrip() {
-  const track = document.getElementById("filmStripTrack");
-  if (!track) return;
+  const items = filter === "all" 
+    ? CAMPAIGN_REGISTRY.featured 
+    : CAMPAIGN_REGISTRY.featured.filter(c => c.category === filter);
 
-  const allItems = [
-    ...PORTFOLIO_DATA.featured,
-    ...PORTFOLIO_DATA.shortForm,
-    ...PORTFOLIO_DATA.brand
-  ];
-
-  // Duplicate items for continuous seamless loop
-  const doubleList = [...allItems, ...allItems];
-
-  track.innerHTML = doubleList.map((item, index) => {
-    return `
-      <div class="film-frame-thumb" onclick="openScreeningRoom('${item.id}')" title="Play ${item.title}">
-        <div class="frame-overlay">
-          <span class="frame-counter">FRAME ${(index + 1).toString().padStart(3, '0')}</span>
-          <span class="frame-title">${item.title}</span>
-        </div>
-        ${createCinematicPosterSvg(item.title, item.category, "🎞️", item.bgGradient || "linear-gradient(135deg, #161a24, #0b0d13)")}
+  container.innerHTML = items.map(c => `
+    <article class="campaign-card" onclick="openCampaignModal('${c.id}')">
+      <div class="card-media-box">
+        <span class="card-badge">${c.badge}</span>
+        <div class="card-play-pill">▶ View Case Study</div>
+        ${generateCampaignSvg(c.title, c.badge, c.isDoc ? "📄" : "🎬", c.bgGradient)}
       </div>
-    `;
-  }).join("");
-}
-
-function renderFeaturedWorks() {
-  const container = document.getElementById("featuredGrid");
-  if (!container) return;
-
-  container.innerHTML = PORTFOLIO_DATA.featured.map((p) => {
-    return `
-      <article class="cine-card" onclick="openScreeningRoom('${p.id}')">
-        <div class="cine-card-media">
-          <span class="cine-tag-badge">${p.tag}</span>
-          <div class="cine-card-play-btn">▶</div>
-          ${createCinematicPosterSvg(p.title, p.category, "🎬", p.bgGradient)}
-        </div>
-        <div class="cine-card-body">
-          <h3 class="cine-card-title">${p.title}</h3>
-          <p class="cine-card-desc">${p.description}</p>
-          <div class="cine-card-meta">
-            <span>⏱ ${p.duration}</span>
-            <span>🎞 ${p.aspect}</span>
-            <span>💻 ${p.software.split('•')[0]}</span>
-          </div>
-        </div>
-      </article>
-    `;
-  }).join("");
-}
-
-function renderShortFormReels() {
-  const container = document.getElementById("shortformGrid");
-  if (!container) return;
-
-  container.innerHTML = PORTFOLIO_DATA.shortForm.map((reel) => {
-    return `
-      <div class="reel-card" onclick="openScreeningRoom('${reel.id}')" title="Play ${reel.title}">
-        <div class="reel-media">
-          <div class="reel-overlay">
-            <span class="reel-tag">${reel.tag}</span>
-            <div class="reel-play-icon">▶</div>
-            <div class="reel-info">
-              <span class="reel-title">${reel.title}</span>
-              <span class="reel-meta">${reel.duration} • 9:16</span>
-            </div>
-          </div>
-          ${createCinematicPosterSvg(reel.title, reel.tag, "📱", reel.bgGradient)}
+      <div class="card-body">
+        <span class="card-client-tag">${c.client}</span>
+        <h3 class="card-title">${c.title}</h3>
+        <p class="card-objective">${c.objective}</p>
+        <div class="card-meta-bar">
+          <span>⏱ ${c.duration}</span>
+          <span>📐 ${c.aspect}</span>
+          <span style="color: var(--accent-red); font-weight: 700;">Explore Brief ➔</span>
         </div>
       </div>
-    `;
-  }).join("");
+    </article>
+  `).join("");
 }
 
-function renderBrandWorks() {
-  const container = document.getElementById("brandGrid");
+function renderReels() {
+  const container = document.getElementById("reelsGrid");
   if (!container) return;
 
-  container.innerHTML = PORTFOLIO_DATA.brand.map((item) => {
-    return `
-      <article class="brand-card" onclick="openScreeningRoom('${item.id}')">
-        <div class="brand-media">
-          ${createCinematicPosterSvg(item.title, item.tag, item.isDoc ? "📄" : "🎨", item.bgGradient)}
+  container.innerHTML = CAMPAIGN_REGISTRY.reels.map(r => `
+    <div class="reel-box" onclick="openCampaignModal('${r.id}')" title="Play ${r.title}">
+      <div class="reel-media-box">
+        <div class="reel-overlay-content">
+          <span class="reel-badge">${r.badge}</span>
+          <div class="reel-play-center">▶</div>
+          <div class="reel-info-group">
+            <h4 class="reel-heading">${r.title}</h4>
+            <span class="reel-sub">${r.duration} • ${r.aspect}</span>
+          </div>
         </div>
-        <div class="brand-body">
-          <h3 class="brand-title">${item.title}</h3>
-          <p class="brand-desc">${item.description}</p>
-        </div>
-      </article>
-    `;
-  }).join("");
-}
-
-function setupAboutImage() {
-  const container = document.getElementById("aboutImageContainer");
-  if (!container) return;
-
-  // Render styled photographer / editor contact sheet card
-  container.innerHTML = `
-    <div style="
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(145deg, #191c28, #0e111a);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      text-align: center;
-      position: relative;
-    ">
-      <span style="font-size: 3.5rem; margin-bottom: 0.5rem; filter: drop-shadow(0 0 15px rgba(255,0,127,0.4));">🎥</span>
-      <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: #fff; letter-spacing: 1px;">THE FACE BEHIND THE BRAND</h3>
-      <p style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #ff007f; margin-top: 0.3rem;">DIRECTOR & LEAD EDITOR</p>
-      
-      <div style="margin-top: 1.25rem;">
-        <a href="https://drive.google.com/file/d/${PORTFOLIO_DATA.aboutImage.driveId}/view" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-          <span>View High-Res Still</span> ↗
-        </a>
+        ${generateCampaignSvg(r.title, r.badge, "📱", r.bgGradient)}
       </div>
     </div>
-  `;
+  `).join("");
 }
 
-// ==========================================================================
-// CINEMATIC SCREENING ROOM MODAL / LIGHTBOX
-// ==========================================================================
+// ==============================================================================
+// CAMPAIGN & CASE STUDY MODAL
+// ==============================================================================
+function openCampaignModal(itemId) {
+  const allItems = [...CAMPAIGN_REGISTRY.featured, ...CAMPAIGN_REGISTRY.reels];
+  const item = allItems.find(i => i.id === itemId);
+  if (!item) return;
 
-function openScreeningRoom(projectId) {
-  const allProjects = [
-    ...PORTFOLIO_DATA.featured,
-    ...PORTFOLIO_DATA.shortForm,
-    ...PORTFOLIO_DATA.brand
-  ];
-
-  const project = allProjects.find((p) => p.id === projectId);
-  if (!project) return;
-
-  const modal = document.getElementById("screeningModal");
-  const modalTag = document.getElementById("modalTag");
+  const modal = document.getElementById("campaignModal");
+  const modalCategory = document.getElementById("modalCategory");
   const modalTitle = document.getElementById("modalTitle");
-  const modalAspect = document.getElementById("modalAspect");
-  const modalSoftware = document.getElementById("modalSoftware");
-  const modalDirectLink = document.getElementById("modalDirectLink");
-  const screenContainer = document.getElementById("modalScreenContainer");
+  const modalDescription = document.getElementById("modalDescription");
+  const modalAudience = document.getElementById("modalAudience");
+  const modalObjective = document.getElementById("modalObjective");
+  const modalChannels = document.getElementById("modalChannels");
+  const modalExternalLink = document.getElementById("modalExternalLink");
+  const playerContainer = document.getElementById("modalPlayerContainer");
+  const togglesWrap = document.getElementById("playerSourceToggles");
 
-  modalTag.textContent = `${project.tag || 'SCENE'} // ${project.category}`;
-  modalTitle.textContent = project.title;
-  modalAspect.textContent = project.aspect || "16:9 Cinema";
-  modalSoftware.textContent = project.software || "Premiere Pro Studio";
-  modalDirectLink.href = `https://drive.google.com/file/d/${project.driveId}/view`;
+  modalCategory.textContent = `${item.badge || 'CASE STUDY'} // ${item.client || 'SOCIAL CAMPAIGN'}`;
+  modalTitle.textContent = item.title;
+  modalDescription.textContent = item.objective || "Strategic creative marketing campaign cut.";
+  modalAudience.textContent = item.audience || "Gen-Z & millennial consumers across social channels";
+  modalObjective.textContent = item.objective || "Brand positioning & viewer engagement";
+  modalChannels.textContent = item.channels || "TikTok, Instagram Reels, YouTube Shorts, Web";
+  modalExternalLink.href = `https://drive.google.com/file/d/${item.driveId}/view`;
 
-  // Check aspect ratio mode (9:16 vertical vs 16:9 widescreen)
-  if (project.aspect && project.aspect.includes("9:16")) {
-    screenContainer.classList.add("vertical-mode");
+  // Aspect ratio adjustment for vertical vs 16:9
+  if (item.aspect && item.aspect.includes("9:16")) {
+    playerContainer.classList.add("vertical-player");
   } else {
-    screenContainer.classList.remove("vertical-mode");
+    playerContainer.classList.remove("vertical-player");
   }
 
-  // Load Google Drive Preview stream by default
-  loadDriveStream(project);
+  // Load Google Drive stream by default
+  loadDriveStream(item);
 
-  // Setup stream vs local toggle buttons in modal footer
-  const specActions = document.querySelector(".spec-actions");
-  if (specActions) {
-    specActions.innerHTML = `
-      <button class="btn btn-primary btn-sm" id="btnStreamDrive" onclick="window.switchPlayerSource('${project.id}', 'drive')">
-        <span>▶ Drive Stream</span>
+  // Setup dual source buttons (Drive Stream vs Local MP4)
+  if (togglesWrap) {
+    togglesWrap.innerHTML = `
+      <button class="btn btn-primary btn-sm" id="btnStream" onclick="window.togglePlayerSource('${item.id}', 'drive')">
+        <span>▶ Stream Preview</span>
       </button>
-      ${project.localFile ? `
-        <button class="btn btn-outline btn-sm" id="btnPlayLocal" onclick="window.switchPlayerSource('${project.id}', 'local')">
+      ${item.localFile ? `
+        <button class="btn btn-outline btn-sm" id="btnLocal" onclick="window.togglePlayerSource('${item.id}', 'local')">
           <span>📁 Local MP4</span>
         </button>
       ` : ''}
-      <a href="https://drive.google.com/file/d/${project.driveId}/view" target="_blank" rel="noopener" class="btn btn-outline btn-sm" id="modalDirectLink">
-        <span>Open in Drive</span> ↗
-      </a>
     `;
   }
 
@@ -490,171 +367,177 @@ function openScreeningRoom(projectId) {
   document.body.style.overflow = "hidden";
 }
 
-function loadDriveStream(project) {
-  const screenContainer = document.getElementById("modalScreenContainer");
-  if (!screenContainer) return;
-  screenContainer.innerHTML = `
+function loadDriveStream(item) {
+  const container = document.getElementById("modalPlayerContainer");
+  if (!container) return;
+  container.innerHTML = `
     <iframe 
-      src="https://drive.google.com/file/d/${project.driveId}/preview" 
+      src="https://drive.google.com/file/d/${item.driveId}/preview" 
       allow="autoplay; encrypted-media" 
       allowfullscreen
-      title="${project.title}"
+      title="${item.title}"
     ></iframe>
   `;
 }
 
-function loadLocalVideo(project) {
-  const screenContainer = document.getElementById("modalScreenContainer");
-  if (!screenContainer) return;
+function loadLocalVideo(item) {
+  const container = document.getElementById("modalPlayerContainer");
+  if (!container) return;
 
-  screenContainer.innerHTML = `
+  container.innerHTML = `
     <video controls autoplay playsinline style="width:100%; height:100%; background:#000;">
-      <source src="assets/${encodeURIComponent(project.localFile)}" type="video/mp4">
-      <source src="../assets/${encodeURIComponent(project.localFile)}" type="video/mp4">
+      <source src="assets/${encodeURIComponent(item.localFile)}" type="video/mp4">
+      <source src="../assets/${encodeURIComponent(item.localFile)}" type="video/mp4">
       Your browser does not support video playback.
     </video>
   `;
 
-  const videoEl = screenContainer.querySelector("video");
-  if (videoEl) {
-    videoEl.addEventListener("error", () => {
-      screenContainer.innerHTML = `
+  const video = container.querySelector("video");
+  if (video) {
+    video.addEventListener("error", () => {
+      container.innerHTML = `
         <div style="padding: 2rem; text-align: center; color: var(--text-muted); font-family: 'Space Mono', monospace; font-size: 0.85rem;">
-          <p style="color: var(--accent-amber); font-size: 1.1rem; margin-bottom: 0.75rem;">⚠️ Local file "${project.localFile}" not yet found in assets/</p>
-          <p style="margin-bottom: 1rem;">The file in assets/ is currently a Google Drive webpage preview. Download the raw .mp4 from Google Drive and place it in the assets folder.</p>
-          <button class="btn btn-primary btn-sm" onclick="window.switchPlayerSource('${project.id}', 'drive')">Switch back to Drive Stream</button>
+          <p style="color: var(--accent-red); font-size: 1.1rem; margin-bottom: 0.75rem;">⚠️ Local file "${item.localFile}" not yet in assets/</p>
+          <p style="margin-bottom: 1rem;">Download the raw .mp4 from Google Drive into assets/ to enable local offline playback.</p>
+          <button class="btn btn-primary btn-sm" onclick="window.togglePlayerSource('${item.id}', 'drive')">Switch back to Stream</button>
         </div>
       `;
     });
   }
 }
 
-window.switchPlayerSource = function (projectId, source) {
-  const allProjects = [
-    ...PORTFOLIO_DATA.featured,
-    ...PORTFOLIO_DATA.shortForm,
-    ...PORTFOLIO_DATA.brand
-  ];
-  const project = allProjects.find((p) => p.id === projectId);
-  if (!project) return;
+window.togglePlayerSource = function(id, source) {
+  const allItems = [...CAMPAIGN_REGISTRY.featured, ...CAMPAIGN_REGISTRY.reels];
+  const item = allItems.find(i => i.id === id);
+  if (!item) return;
 
-  const btnDrive = document.getElementById("btnStreamDrive");
-  const btnLocal = document.getElementById("btnPlayLocal");
+  const btnStream = document.getElementById("btnStream");
+  const btnLocal = document.getElementById("btnLocal");
 
   if (source === "drive") {
-    loadDriveStream(project);
-    if (btnDrive) { btnDrive.className = "btn btn-primary btn-sm"; }
-    if (btnLocal) { btnLocal.className = "btn btn-outline btn-sm"; }
+    loadDriveStream(item);
+    if (btnStream) btnStream.className = "btn btn-primary btn-sm";
+    if (btnLocal) btnLocal.className = "btn btn-outline btn-sm";
   } else {
-    loadLocalVideo(project);
-    if (btnDrive) { btnDrive.className = "btn btn-outline btn-sm"; }
-    if (btnLocal) { btnLocal.className = "btn btn-primary btn-sm"; }
+    loadLocalVideo(item);
+    if (btnStream) btnStream.className = "btn btn-outline btn-sm";
+    if (btnLocal) btnLocal.className = "btn btn-primary btn-sm";
   }
 };
 
-
-function closeScreeningRoom() {
-  const modal = document.getElementById("screeningModal");
-  const screenContainer = document.getElementById("modalScreenContainer");
+function closeCampaignModal() {
+  const modal = document.getElementById("campaignModal");
+  const container = document.getElementById("modalPlayerContainer");
   if (!modal) return;
 
   modal.classList.remove("active");
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 
-  // Clear iframe to halt any video playback
-  if (screenContainer) {
-    screenContainer.innerHTML = "";
+  if (container) {
+    container.innerHTML = "";
   }
 }
 
-// ==========================================================================
-// USER INTERACTIONS & EVENT LISTENERS
-// ==========================================================================
-
+// ==============================================================================
+// INITIALIZATION & EVENT LISTENERS
+// ==============================================================================
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize Live Timecode HUD
-  new CinematicTimecode("liveTimecode");
+  // Render campaigns and reels
+  renderCampaigns("all");
+  renderReels();
 
-  // Render portfolio components
-  renderFilmStrip();
-  renderFeaturedWorks();
-  renderShortFormReels();
-  renderBrandWorks();
-  setupAboutImage();
-
-  // Modal Close Handlers
-  const modalClose = document.getElementById("modalClose");
-  const modalBackdrop = document.getElementById("modalBackdrop");
-  if (modalClose) modalClose.addEventListener("click", closeScreeningRoom);
-  if (modalBackdrop) modalBackdrop.addEventListener("click", closeScreeningRoom);
-
-  // Escape key to close modal
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeScreeningRoom();
+  // Category filter handlers
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderCampaigns(btn.dataset.filter);
+    });
   });
 
-  // Hero Highlight Reel Button
-  const heroReelBtn = document.getElementById("playHeroReel");
-  if (heroReelBtn) {
-    heroReelBtn.addEventListener("click", () => {
-      openScreeningRoom("porsche-spec");
+  // Modal close handlers
+  const closeBtn = document.getElementById("modalCloseBtn");
+  const backdrop = document.getElementById("modalBackdrop");
+  if (closeBtn) closeBtn.addEventListener("click", closeCampaignModal);
+  if (backdrop) backdrop.addEventListener("click", closeCampaignModal);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeCampaignModal();
+  });
+
+  // Dark/Light Theme Switcher
+  const themeToggle = document.getElementById("themeToggle");
+  const themeIcon = document.getElementById("themeIcon");
+  
+  // Check saved theme
+  const savedTheme = localStorage.getItem("ella_theme") || "light";
+  document.body.setAttribute("data-theme", savedTheme);
+  if (themeIcon) {
+    themeIcon.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const current = document.body.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      document.body.setAttribute("data-theme", next);
+      localStorage.setItem("ella_theme", next);
+      if (themeIcon) {
+        themeIcon.textContent = next === "dark" ? "☀️" : "🌙";
+      }
     });
   }
 
-  // Mobile Nav Toggle
-  const mobileToggle = document.getElementById("mobileToggle");
+  // Mobile Menu Toggle
+  const mobileBtn = document.getElementById("mobileMenuBtn");
   const mobileDrawer = document.getElementById("mobileDrawer");
-  if (mobileToggle && mobileDrawer) {
-    mobileToggle.addEventListener("click", () => {
+  if (mobileBtn && mobileDrawer) {
+    mobileBtn.addEventListener("click", () => {
       mobileDrawer.classList.toggle("active");
     });
 
-    // Close on link click
-    document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+    document.querySelectorAll(".mobile-link").forEach(link => {
       link.addEventListener("click", () => {
         mobileDrawer.classList.remove("active");
       });
     });
   }
 
-  // Film Grain Toggle
-  const btnToggleGrain = document.getElementById("btnToggleGrain");
-  const filmGrain = document.getElementById("filmGrain");
-  if (btnToggleGrain && filmGrain) {
-    btnToggleGrain.addEventListener("click", () => {
-      const isVisible = filmGrain.style.display !== "none";
-      filmGrain.style.display = isVisible ? "none" : "block";
-      btnToggleGrain.textContent = isVisible ? "Enable 35mm Grain" : "Disable 35mm Grain";
+  // Interactive Doodle Stars (click to spin!)
+  document.querySelectorAll(".doodle-star").forEach(star => {
+    star.addEventListener("click", () => {
+      star.style.transform = "scale(1.6) rotate(360deg)";
+      setTimeout(() => {
+        star.style.transform = "";
+      }, 600);
     });
-  }
+  });
 });
 
-// Handle Call Sheet / Contact Form Submission
-window.handleFormSubmit = function () {
-  const name = document.getElementById("clientName").value;
-  const email = document.getElementById("clientEmail").value;
-  const scope = document.getElementById("projectType").value;
-  const msg = document.getElementById("projectMessage").value;
+// Contact Pitch Form Submission
+window.handlePitchSubmit = function() {
+  const name = document.getElementById("senderName").value;
+  const email = document.getElementById("senderEmail").value;
+  const type = document.getElementById("inquiryType").value;
+  const msg = document.getElementById("senderMessage").value;
   const statusEl = document.getElementById("formStatus");
 
   if (!statusEl) return;
 
   statusEl.className = "form-status success";
   statusEl.innerHTML = `
-    🎬 <strong>Brief Logged!</strong> Thank you, ${name}. Your production request for [${scope.toUpperCase()}] has been dispatched to Ella. Direct confirmation sent to ${email}.
+    ✨ <strong>Message Logged!</strong> Thank you, ${name}. Your message regarding [${type.toUpperCase()}] has been dispatched to Ella Rose Bowis. Confirmation sent to ${email}.
   `;
 
-  // Prepare mailto fallback
-  const mailtoUrl = `mailto:bbristow.uk@gmail.com?subject=${encodeURIComponent(`New Project Brief: ${name} (${scope})`)}&body=${encodeURIComponent(`From: ${name} (${email})\nScope: ${scope}\n\nProject Brief:\n${msg}`)}`;
-  
+  const mailtoUrl = `mailto:bbristow.uk@gmail.com?subject=${encodeURIComponent(`Marketing Opportunity: ${name} (${type})`)}&body=${encodeURIComponent(`From: ${name} (${email})\nType: ${type}\n\nMessage:\n${msg}`)}`;
+
   setTimeout(() => {
-    const directConfirm = confirm("Would you like to open your email client to send the project brief directly to Ella as well?");
-    if (directConfirm) {
+    if (confirm("Would you like to open your email client to send this message directly to Ella as well?")) {
       window.location.href = mailtoUrl;
     }
   }, 600);
 };
 
-// Make openScreeningRoom globally available for inline onclicks
-window.openScreeningRoom = openScreeningRoom;
+window.openCampaignModal = openCampaignModal;
