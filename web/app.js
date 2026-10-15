@@ -316,7 +316,6 @@ function closeModal() {
   currentItem = null;
 }
 
-// Explicitly bind functions to window scope so HTML onclick attributes find them instantly
 window.openCampaignModal = openCampaignModal;
 window.switchPlayer = switchPlayer;
 window.closeModal = closeModal;
@@ -324,19 +323,19 @@ window.closeModal = closeModal;
 window.submitPitch = function() {
   const name = document.getElementById("cName").value;
   const email = document.getElementById("cEmail").value;
-  const type = document.getElementById("cType").value;
+  const title = document.getElementById("cTitle").value;
   const msg = document.getElementById("cMsg").value;
   const status = document.getElementById("formStatus");
 
   if (!status) return;
 
   status.className = "form-status success";
-  status.innerHTML = `✓ Thank you, ${name}. Message regarding [${type}] logged. Direct confirmation sent to ${email}.`;
+  status.innerHTML = `✓ Thanks ${name}! Your message has been prepared.`;
 
-  const mailto = `mailto:bbristow.uk@gmail.com?subject=${encodeURIComponent(`Opportunity: ${name} (${type})`)}&body=${encodeURIComponent(`From: ${name} (${email})\nType: ${type}\n\n${msg}`)}`;
+  const mailto = `mailto:bbristow.uk@gmail.com?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${msg}`)}`;
 
   setTimeout(() => {
-    if (confirm("Would you like to open your email client to send this message directly to Ella as well?")) {
+    if (confirm("Would you like to open your email client to send this message to Ella?")) {
       window.location.href = mailto;
     }
   }, 600);
