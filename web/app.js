@@ -509,6 +509,7 @@ function loadLocalVideo(project) {
 
   screenContainer.innerHTML = `
     <video controls autoplay playsinline style="width:100%; height:100%; background:#000;">
+      <source src="assets/${encodeURIComponent(project.localFile)}" type="video/mp4">
       <source src="../assets/${encodeURIComponent(project.localFile)}" type="video/mp4">
       Your browser does not support video playback.
     </video>
