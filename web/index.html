@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ella | Filmmaker & Video Editor Portfolio</title>
+  <meta name="description" content="Cinematic video editing, commercial spec ads, and high-impact short-form content by Ella.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="film-grain-enabled">
+
+  <!-- Ambient Cinematic Background Glow -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="film-grain-overlay" id="filmGrain"></div>
+
+  <!-- HUD Top Bar / Clapper Header -->
+  <header class="hud-header">
+    <div class="hud-container">
+      <div class="brand-slate">
+        <span class="clapper-icon">🎬</span>
+        <div class="brand-text">
+          <span class="brand-name">ELLA</span>
+          <span class="brand-role">FILMMAKER & VIDEO EDITOR</span>
+        </div>
+      </div>
+
+      <!-- Live Recording HUD Status -->
+      <div class="timecode-badge" title="Director's Live Timecode">
+        <span class="rec-dot"></span>
+        <span class="rec-label">REC</span>
+        <span class="timecode-digits" id="liveTimecode">00:01:24:18</span>
+        <span class="fps-badge">24 FPS</span>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hud-nav">
+        <a href="#featured">Featured</a>
+        <a href="#short-form">Short Form (9:16)</a>
+        <a href="#brand-stills">Brand & Stills</a>
+        <a href="#about">About Ella</a>
+        <a href="#moodboard">Moodboard</a>
+        <a href="#contact" class="nav-cta">Book an Edit</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Dropdown Nav -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <a href="#featured" class="mobile-nav-link">Featured Commercials</a>
+    <a href="#short-form" class="mobile-nav-link">Short Form Reels (9:16)</a>
+    <a href="#brand-stills" class="mobile-nav-link">Brand & Creative Direction</a>
+    <a href="#about" class="mobile-nav-link">About Ella</a>
+    <a href="#moodboard" class="mobile-nav-link">Inspiration & Moodboard</a>
+    <a href="#contact" class="mobile-nav-link mobile-cta">Book an Edit</a>
+  </div>
+
+  <main>
+    <!-- HERO SECTION: THE DIRECTOR'S SLATE -->
+    <section class="hero-section">
+      <div class="hero-container">
+        
+        <!-- Film Slate Marker -->
+        <div class="film-slate-box">
+          <div class="slate-stripes"></div>
+          <div class="slate-details">
+            <div class="slate-col"><span class="label">PROD</span><span class="val">ELLA SHOWREEL</span></div>
+            <div class="slate-col"><span class="label">SCENE</span><span class="val">2026.01</span></div>
+            <div class="slate-col"><span class="label">TAKE</span><span class="val">01</span></div>
+            <div class="slate-col"><span class="label">ROLL</span><span class="val">A_CAM</span></div>
+            <div class="slate-col"><span class="label">DATE</span><span class="val">OCT 2026</span></div>
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="pulse-icon"></span> AVAILABLE FOR NEW PROJECTS & COMMERCIAL COMMISSIONS
+          </div>
+          <h1 class="hero-title">
+            STORIES TOLD THROUGH <span class="highlight-text">CINEMATIC RHYTHM</span> & RAW INTENSITY.
+          </h1>
+          <p class="hero-description">
+            Hi, I’m <strong>Ella</strong> — a video editor, filmmaker, and creative content producer. From high-octane automotive edits and suspenseful spec campaigns to viral vertical short-form reels, I craft visual experiences that hook viewers in the first 3 seconds.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="playHeroReel">
+              <span class="btn-icon">▶</span>
+              <span>Watch Highlight Reel</span>
+            </button>
+            <a href="#featured" class="btn btn-outline">
+              <span>Explore Projects</span>
+              <span class="btn-arrow">↓</span>
+            </a>
+          </div>
+
+          <!-- Quick Stats / Badges -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Projects & Cuts</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">4K / 24p</span>
+              <span class="stat-label">Cinematic Standard</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">9:16 & 16:9</span>
+              <span class="stat-label">Multi-Format Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 35mm SPROCKET FILM STRIP MARQUEE -->
+      <div class="film-strip-wrapper">
+        <div class="film-sprockets top"></div>
+        <div class="film-strip-track" id="filmStripTrack">
+          <!-- Filled dynamically by JavaScript with project frames -->
+        </div>
+        <div class="film-sprockets bottom"></div>
+      </div>
+    </section>
+
+    <!-- SECTION: FEATURED CINEMATIC COMMERCIALS & SPEC ADS -->
+    <section class="section-container" id="featured">
+      <div class="section-header">
+        <div class="section-badge">ACT I // CINEMATIC CUTS</div>
+        <h2 class="section-title">FEATURED SPEC COMMERCIALS</h2>
+        <p class="section-subtitle">Flagship video edits featuring dynamic pacing, sound design, and color grading.</p>
+      </div>
+
+      <div class="featured-grid" id="featuredGrid">
+        <!-- Rendered by JS: Porsche, F1, Netflix Horror -->
+      </div>
+    </section>
+
+    <!-- SECTION: SHORT FORM REELS (9:16 VERTICAL CINEMA) -->
+    <section class="section-container" id="short-form">
+      <div class="section-header">
+        <div class="section-badge">ACT II // SHORT FORM & SOCIAL</div>
+        <h2 class="section-title">VERTICAL REELS & TIKTOK CUTS (9:16)</h2>
+        <p class="section-subtitle">High-retention mobile storytelling crafted for TikTok, Instagram Reels, and YouTube Shorts.</p>
+      </div>
+
+      <div class="shortform-grid" id="shortformGrid">
+        <!-- Rendered by JS: 8 WhatsApp / Social Video Cuts -->
+      </div>
+    </section>
+
+    <!-- SECTION: BRANDING & STILLS -->
+    <section class="section-container" id="brand-stills">
+      <div class="section-header">
+        <div class="section-badge">ACT III // CREATIVE DIRECTION</div>
+        <h2 class="section-title">BRAND IDENTITY, STILLS & CAMPAIGNS</h2>
+        <p class="section-subtitle">Graphic design, promotional collateral, and strategic campaign treatments.</p>
+      </div>
+
+      <div class="brand-grid" id="brandGrid">
+        <!-- Rendered by JS: Car Detailing Business Card, Hot Pink Version, Campaign PDF -->
+      </div>
+    </section>
+
+    <!-- SECTION: ABOUT ELLA / THE FACE BEHIND THE BRAND -->
+    <section class="section-container about-section" id="about">
+      <div class="about-card">
+        <div class="about-visual">
+          <div class="polaroid-frame">
+            <div class="film-slide-tag">KODAK 400TX // CONTACT SHEET</div>
+            <div class="about-image-wrapper" id="aboutImageContainer">
+              <!-- Loaded with 'The.png' / The Face Behind the Brand -->
+              <div class="about-placeholder">
+                <span class="about-emoji">📸</span>
+                <span class="about-label">The Face Behind The Brand</span>
+              </div>
+            </div>
+            <div class="polaroid-caption">Ella — Director & Lead Editor</div>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <div class="section-badge">THE DIRECTOR // BEHIND THE LENS</div>
+          <h2 class="about-title">OBSESSED WITH RHYTHM, PACING & VISUAL PUNCH.</h2>
+          
+          <p class="about-text">
+            Editing isn't just about putting clips together—it's about manipulating emotion, tempo, and adrenaline. Every transition, sound drop, and color shift is calculated to keep the viewer locked in.
+          </p>
+
+          <p class="about-text">
+            Whether I'm cutting an engine roar in a <strong>Porsche</strong> commercial, timing a dramatic thriller drop for <strong>Netflix</strong>, or crafting fast-turnaround <strong>9:16 viral edits</strong>, I bring a distinct cinematic look to every frame.
+          </p>
+
+          <div class="director-tools">
+            <h4 class="tools-heading">EDITING SUITE & TOOLKIT</h4>
+            <div class="tools-tags">
+              <span class="tool-tag">Adobe Premiere Pro</span>
+              <span class="tool-tag">DaVinci Resolve Studio</span>
+              <span class="tool-tag">After Effects</span>
+              <span class="tool-tag">Advanced Sound Design</span>
+              <span class="tool-tag">Film Emulation & Color Grading</span>
+              <span class="tool-tag">Motion Tracking</span>
+              <span class="tool-tag">CapCut Pro Vertical</span>
+            </div>
+          </div>
+
+          <div class="about-quote">
+            “Film is 50% what you see and 50% what you hear—great editing makes them strike at the exact same millisecond.”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: MOODBOARD & INSPIRATION -->
+    <section class="section-container" id="moodboard">
+      <div class="section-header">
+        <div class="section-badge">CREATIVE VAULT // INSPIRATION</div>
+        <h2 class="section-title">THE FILM MOODBOARD</h2>
+        <p class="section-subtitle">Visual aesthetics, lighting references, color harmonies, and cinematic inspirations driving Ella's work.</p>
+      </div>
+
+      <div class="moodboard-board">
+        <!-- Moodboard Item 1: Color Science -->
+        <div class="mood-card mood-card-palette">
+          <div class="mood-tag">PALETTE // CINEMATIC COLOR SCIENCE</div>
+          <div class="swatches-container">
+            <div class="swatch" style="background: #08090C;" title="Obsidian Shadow #08090C"><span>#08090C</span></div>
+            <div class="swatch" style="background: #D90429;" title="Formula Crimson #D90429"><span>#D90429</span></div>
+            <div class="swatch" style="background: #FF007F;" title="Neon Hot Pink #FF007F"><span>#FF007F</span></div>
+            <div class="swatch" style="background: #F3C623;" title="Kodak Amber #F3C623"><span>#F3C623</span></div>
+            <div class="swatch" style="background: #EAEBED;" title="Silver Screen #EAEBED"><span style="color:#111">#EAEBED</span></div>
+          </div>
+          <p class="mood-desc">High contrast, deep shadow blacks with hot neon and tungsten highlights inspired by David Fincher and modern music video cinematography.</p>
+        </div>
+
+        <!-- Moodboard Item 2: Aesthetic Pillars -->
+        <div class="mood-card mood-card-pillars">
+          <div class="mood-tag">CORE AESTHETIC PILLARS</div>
+          <div class="pillar-grid">
+            <div class="pillar-box">
+              <span class="pillar-icon">⚡</span>
+              <h4>High-Octane Cuts</h4>
+              <p>Rhythmic match-cuts synced to bass transients and sub-drops.</p>
+            </div>
+            <div class="pillar-box">
+              <span class="pillar-icon">🎞️</span>
+              <h4>Analog Texture</h4>
+              <p>Subtle 35mm film grain, halation, gate weave, and lens flares.</p>
+            </div>
+            <div class="pillar-box">
+              <span class="pillar-icon">📱</span>
+              <h4>Retention-Engineered</h4>
+              <p>Instant visual hooks within 0.8s for TikTok & Reels engagement.</p>
+            </div>
+            <div class="pillar-box">
+              <span class="pillar-icon">🎧</span>
+              <h4>Layered Soundscapes</h4>
+              <p>Risers, whooshes, atmospheric drones, and punchy foley design.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Moodboard Item 3: Direct Moodboard Embed / Link Slot -->
+        <div class="mood-card mood-card-custom">
+          <div class="mood-tag">EXPAND THE MOODBOARD</div>
+          <h3>Have More Files or a Moodboard Link?</h3>
+          <p>Drop your Pinterest, Milanote, or Figma moodboard link here, or add more video/image files directly into the <code>assets/</code> folder to expand the portfolio.</p>
+          <div class="moodboard-actions">
+            <a href="#contact" class="btn btn-outline btn-sm">Submit New Creative Assets</a>
+            <button class="btn btn-primary btn-sm" id="btnToggleGrain">Toggle 35mm Grain</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CALL SHEET / CONTACT & BOOKING -->
+    <section class="section-container contact-section" id="contact">
+      <div class="callsheet-card">
+        <div class="callsheet-header">
+          <div class="callsheet-title-group">
+            <span class="callsheet-badge">OFFICIAL PRODUCTION CALL SHEET</span>
+            <h2>START A PRODUCTION // BOOK AN EDIT</h2>
+          </div>
+          <div class="callsheet-date">DATE: CURRENT PRODUCTION PERIOD</div>
+        </div>
+
+        <div class="callsheet-grid">
+          <div class="callsheet-info">
+            <p class="callsheet-intro">
+              Looking for a show-stopping spec ad, a full social media content sprint, or cinematic editing for your brand? Let’s make something unforgettable.
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-row">
+                <span class="contact-icon">✉️</span>
+                <div>
+                  <span class="contact-label">DIRECT EMAIL</span>
+                  <a href="mailto:bbristow.uk@gmail.com" class="contact-val">bbristow.uk@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <span class="contact-icon">📍</span>
+                <div>
+                  <span class="contact-label">LOCATION & TIMEZONE</span>
+                  <span class="contact-val">United Kingdom (GMT/BST) • Worldwide Remote</span>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <span class="contact-icon">⚡</span>
+                <div>
+                  <span class="contact-label">TURNAROUND</span>
+                  <span class="contact-val">Fast turnaround (24h - 72h on short form)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links-wrapper">
+              <span class="social-heading">FIND ELLA ONLINE</span>
+              <div class="social-pills">
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill">Instagram</a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-pill">TikTok</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener" class="social-pill">YouTube</a>
+                <a href="https://vimeo.com" target="_blank" rel="noopener" class="social-pill">Vimeo</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-pill">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Project Inquiry Form -->
+          <form class="callsheet-form" id="contactForm" onsubmit="event.preventDefault(); window.handleFormSubmit();">
+            <div class="form-group">
+              <label for="clientName">YOUR NAME / BRAND</label>
+              <input type="text" id="clientName" placeholder="e.g. Red Bull Creative / Alex Turner" required>
+            </div>
+
+            <div class="form-group">
+              <label for="clientEmail">CONTACT EMAIL</label>
+              <input type="email" id="clientEmail" placeholder="you@brand.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="projectType">PROJECT SCOPE</label>
+              <select id="projectType">
+                <option value="commercial">Commercial / Spec Ad (16:9)</option>
+                <option value="shortform">Short-Form Content Package (TikTok / Reels)</option>
+                <option value="brand">Brand Identity & Visuals</option>
+                <option value="full">Full Campaign Direction</option>
+                <option value="other">Other Creative Collaboration</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="projectMessage">PROJECT BRIEF / VISION</label>
+              <textarea id="projectMessage" rows="4" placeholder="Tell me about the style, timeline, and reference videos..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              <span>Send Production Brief</span>
+              <span class="btn-icon">➔</span>
+            </button>
+
+            <div class="form-status" id="formStatus"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CINEMATIC SCREENING ROOM MODAL / LIGHTBOX -->
+  <div class="screening-modal" id="screeningModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-scene-tag" id="modalTag">SCENE 01 // SPEC AD</span>
+          <h3 class="modal-title" id="modalTitle">Porsche 911 Spec Commercial</h3>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Close screening room">✕</button>
+      </div>
+
+      <!-- Video Player Wrapper with Ambient Glow -->
+      <div class="modal-screen-wrapper">
+        <div class="modal-screen-glow" id="screenGlow"></div>
+        <div class="modal-screen" id="modalScreenContainer">
+          <!-- Dynamic Iframe or Video Tag -->
+        </div>
+      </div>
+
+      <!-- Player Specs & Details Bar -->
+      <div class="modal-footer-specs">
+        <div class="spec-col">
+          <span class="spec-k">DIRECTOR</span>
+          <span class="spec-v">Ella</span>
+        </div>
+        <div class="spec-col">
+          <span class="spec-k">ASPECT RATIO</span>
+          <span class="spec-v" id="modalAspect">16:9 Cinema</span>
+        </div>
+        <div class="spec-col">
+          <span class="spec-k">SUITE</span>
+          <span class="spec-v" id="modalSoftware">Premiere Pro • After Effects</span>
+        </div>
+        <div class="spec-actions">
+          <a href="#" id="modalDirectLink" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+            <span>Open in Google Drive</span> ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="hud-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-brand">ELLA FILMS & EDITS</span>
+        <span class="footer-copy">© 2026 Ella. All Rights Reserved. Cut with precision.</span>
+      </div>
+      <div class="footer-right">
+        <span class="timecode-mini" id="footerTimecode">END CREDITS // 24.000 FPS</span>
+        <a href="#filmGrain" class="scroll-top">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
